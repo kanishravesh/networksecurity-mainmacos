@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/c9815ed151094fa3bb143236927a8077/artifacts
+end_time: 1762352314026
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c9815ed151094fa3bb143236927a8077
+run_name: amusing-chimp-25
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762352111629
+status: 3
+tags: []
+user_id: MAC

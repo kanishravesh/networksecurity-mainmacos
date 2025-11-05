@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/474847b21a304f49b0539300fa82f658/artifacts
+end_time: 1762339838378
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 474847b21a304f49b0539300fa82f658
+run_name: whimsical-mare-10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762339838334
+status: 3
+tags: []
+user_id: MAC

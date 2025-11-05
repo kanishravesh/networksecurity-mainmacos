@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/1d68d0a1e5894cb98089f99607596664/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d68d0a1e5894cb98089f99607596664
+run_name: big-mare-297
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762353391863
+status: 1
+tags: []
+user_id: MAC

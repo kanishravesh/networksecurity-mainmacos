@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload CSV - Phishing Detector</title>
+    <style>
+      /* ---------- GLOBAL LAYOUT ---------- */
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      /* ---------- NAVBAR ---------- */
+      .navbar {
+        background: linear-gradient(90deg, #0066ff, #00aaff);
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 17px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .navbar a:hover {
+        color: #e0e0e0;
+        text-decoration: underline;
+      }
+
+      /* ---------- MAIN CONTAINER ---------- */
+      .container {
+        width: 90%;
+        max-width: 650px;
+        margin: 80px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ---------- HEADINGS ---------- */
+      h2 {
+        color: #222;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 25px;
+      }
+
+      /* ---------- FILE INPUT ---------- */
+      input[type="file"] {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: border-color 0.2s ease-in-out;
+      }
+
+      input[type="file"]:hover {
+        border-color: #007bff;
+      }
+
+      /* ---------- BUTTONS ---------- */
+      button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background: #0056cc;
+        transform: translateY(-1px);
+      }
+
+      /* ---------- FOOTER ---------- */
+      .footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 13px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/train"> Train Model</a>
+      <a href="/upload"> Upload CSV</a>
+      <a href="/feature_form"> Manual Check</a>
+      <a href="/docs"> API Docs</a>
+      <a href="/results">Model Insights</a>
+
+    </div>
+
+    <div class="container">
+      <h2>Upload CSV for Bulk Prediction</h2>
+      <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required />
+        <button type="submit">Upload and Predict</button>
+      </form>
+    </div>
+  </body>
+</html>

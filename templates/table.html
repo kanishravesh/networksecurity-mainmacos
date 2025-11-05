@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing CSV Prediction</title>
+    <style>
+        body { font-family: Arial; background: #f4f6f8; text-align: center; margin: 0; }
+        .table-container { background: #fff; padding: 20px; border-radius: 12px; width: 90%; margin: 40px auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        .navbar {
+            background: linear-gradient(90deg, #007bff, #00aaff);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/train"> Train Model</a>
+        <a href="/feature_form">Manual Check</a>
+        <a href="/docs">API Docs</a>
+        <a href="/results">Model Insights</a>
+
+    </div>
+
+    <h2>Uploaded CSV Prediction Results</h2>
+    <div class="table-container">
+        {{ table | safe }}
+    </div>
+</body>
+</html>

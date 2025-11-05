@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Insights</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            text-align: center;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #007bff, #00aaff);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        a.mlflow-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: #007bff;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+        a.mlflow-link:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/upload"> Upload CSV</a>
+        <a href="/feature_form"> Manual Check</a>
+        <a href="/train"> Retrain Model</a>
+        <a href="/results"> Model Insights</a>
+    </div>
+
+    <h2> Model Insights Dashboard</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Correlation Heatmap</h3>
+            <img src="/static/plots/correlation_heatmap.png" onerror="this.src='/static/default_plot.png';">
+        </div>
+        <div class="card">
+            <h3>Model Comparison</h3>
+            <img src="/static/plots/model_comparison.png" onerror="this.src='/static/default_plot.png';">
+        </div>
+        <div class="card">
+            <h3>Feature Importance</h3>
+            <img src="/static/plots/feature_importance.png" onerror="this.src='/static/default_plot.png';">
+        </div>
+        <div class="card">
+            <h3>Decision Tree</h3>
+            <img src="/static/plots/decision_tree.png" onerror="this.src='/static/default_plot.png';">
+        </div>
+    </div>
+
+
+</body>
+</html>

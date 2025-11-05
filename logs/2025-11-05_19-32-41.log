@@ -1,0 +1,20 @@
+2025-11-05 19:32:59,374 [INFO] root:42 - Start data Ingestion
+2025-11-05 19:33:00,713 [INFO] root:65 - Performed train test split on the dataframe
+2025-11-05 19:33:00,713 [INFO] root:67 - Exited split_data_as_train_test method of Data_Ingestion class
+2025-11-05 19:33:00,713 [INFO] root:75 - Exporting train and test file path.
+2025-11-05 19:33:00,825 [INFO] root:84 - Exported train and test file path.
+2025-11-05 19:33:00,826 [INFO] root:45 - Data Ingestion completed and artifact: DataIngestionArtifact(trained_file_path='Artifacts/11_05_2025_19_32_41/data_ingestion/ingested/train.csv', test_file_path='Artifacts/11_05_2025_19_32_41/data_ingestion/ingested/test.csv')
+2025-11-05 19:33:00,834 [INFO] root:55 - Initiate the data Validation
+2025-11-05 19:33:00,873 [INFO] root:32 - Required number of columns:2
+2025-11-05 19:33:00,873 [INFO] root:33 - Data frame has columns:31
+2025-11-05 19:33:00,873 [INFO] root:32 - Required number of columns:2
+2025-11-05 19:33:00,874 [INFO] root:33 - Data frame has columns:31
+2025-11-05 19:33:01,105 [INFO] root:63 - Entered initiate_data_transformation method of DataTransformation class
+2025-11-05 19:33:01,105 [INFO] root:65 - Starting data transformation
+2025-11-05 19:33:01,159 [INFO] root:48 - Entered get_data_trnasformer_object method of Trnasformation class
+2025-11-05 19:33:01,159 [INFO] root:53 - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+2025-11-05 19:33:01,197 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 19:33:01,202 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 19:33:01,202 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 19:33:01,210 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 19:37:25,307 [INFO] root:107 - Best model: Random Forest with F1 Score: 0.8743085524462042

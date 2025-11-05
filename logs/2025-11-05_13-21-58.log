@@ -1,0 +1,6 @@
+2025-11-05 13:22:05,812 [INFO] httpx:1025 - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+2025-11-05 13:22:05,821 [INFO] dagshub:107 - Accessing as kanishravesh
+2025-11-05 13:22:06,588 [INFO] httpx:1025 - HTTP Request: GET https://dagshub.com/api/v1/repos/kanishravesh/networksecurity-mainmacos "HTTP/1.1 200 OK"
+2025-11-05 13:22:07,122 [INFO] httpx:1025 - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+2025-11-05 13:22:07,126 [INFO] dagshub:107 - Initialized MLflow to track repo "kanishravesh/networksecurity-mainmacos"
+2025-11-05 13:22:07,127 [INFO] dagshub:107 - Repository kanishravesh/networksecurity-mainmacos initialized!

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/dbf9d34036cb4edbb08677a575eb0d98/artifacts
+end_time: 1762353390121
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dbf9d34036cb4edbb08677a575eb0d98
+run_name: sedate-lark-350
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762353290327
+status: 3
+tags: []
+user_id: MAC

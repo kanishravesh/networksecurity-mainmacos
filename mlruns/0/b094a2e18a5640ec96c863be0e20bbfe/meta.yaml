@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/b094a2e18a5640ec96c863be0e20bbfe/artifacts
+end_time: 1762331272106
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b094a2e18a5640ec96c863be0e20bbfe
+run_name: clean-loon-872
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762331272060
+status: 3
+tags: []
+user_id: MAC

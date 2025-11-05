@@ -1,0 +1,43 @@
+2025-11-05 16:15:33,718 [INFO] root:42 - Start data Ingestion
+2025-11-05 16:15:34,945 [INFO] root:65 - Performed train test split on the dataframe
+2025-11-05 16:15:34,946 [INFO] root:67 - Exited split_data_as_train_test method of Data_Ingestion class
+2025-11-05 16:15:34,946 [INFO] root:75 - Exporting train and test file path.
+2025-11-05 16:15:35,035 [INFO] root:84 - Exported train and test file path.
+2025-11-05 16:15:35,036 [INFO] root:45 - Data Ingestion completed and artifact: DataIngestionArtifact(trained_file_path='Artifacts/11_05_2025_16_14_46/data_ingestion/ingested/train.csv', test_file_path='Artifacts/11_05_2025_16_14_46/data_ingestion/ingested/test.csv')
+2025-11-05 16:15:35,043 [INFO] root:55 - Initiate the data Validation
+2025-11-05 16:15:35,084 [INFO] root:32 - Required number of columns:2
+2025-11-05 16:15:35,084 [INFO] root:33 - Data frame has columns:31
+2025-11-05 16:15:35,084 [INFO] root:32 - Required number of columns:2
+2025-11-05 16:15:35,085 [INFO] root:33 - Data frame has columns:31
+2025-11-05 16:15:35,269 [INFO] root:63 - Entered initiate_data_transformation method of DataTransformation class
+2025-11-05 16:15:35,269 [INFO] root:65 - Starting data transformation
+2025-11-05 16:15:35,313 [INFO] root:48 - Entered get_data_trnasformer_object method of Trnasformation class
+2025-11-05 16:15:35,313 [INFO] root:53 - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+2025-11-05 16:15:35,345 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 16:15:35,351 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 16:15:35,351 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 16:15:35,358 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 16:20:38,399 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 16:20:38,601 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 16:20:38,602 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 16:20:38,805 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 16:20:38,806 [INFO] root:124 - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts/11_05_2025_16_14_46/model_trainer/trained_model/model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9911845171749925, precision_score=0.989279935275081, recall_score=0.9930964467005076), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9748580697485807, precision_score=0.9740680713128039, recall_score=0.9756493506493507))
+2025-11-05 16:23:42,844 [INFO] root:42 - Start data Ingestion
+2025-11-05 16:23:46,383 [INFO] root:65 - Performed train test split on the dataframe
+2025-11-05 16:23:46,384 [INFO] root:67 - Exited split_data_as_train_test method of Data_Ingestion class
+2025-11-05 16:23:46,384 [INFO] root:75 - Exporting train and test file path.
+2025-11-05 16:23:46,469 [INFO] root:84 - Exported train and test file path.
+2025-11-05 16:23:46,469 [INFO] root:45 - Data Ingestion completed and artifact: DataIngestionArtifact(trained_file_path='Artifacts/11_05_2025_16_14_46/data_ingestion/ingested/train.csv', test_file_path='Artifacts/11_05_2025_16_14_46/data_ingestion/ingested/test.csv')
+2025-11-05 16:23:46,478 [INFO] root:55 - Initiate the data Validation
+2025-11-05 16:23:46,517 [INFO] root:32 - Required number of columns:2
+2025-11-05 16:23:46,518 [INFO] root:33 - Data frame has columns:31
+2025-11-05 16:23:46,518 [INFO] root:32 - Required number of columns:2
+2025-11-05 16:23:46,518 [INFO] root:33 - Data frame has columns:31
+2025-11-05 16:23:46,723 [INFO] root:63 - Entered initiate_data_transformation method of DataTransformation class
+2025-11-05 16:23:46,724 [INFO] root:65 - Starting data transformation
+2025-11-05 16:23:46,766 [INFO] root:48 - Entered get_data_trnasformer_object method of Trnasformation class
+2025-11-05 16:23:46,766 [INFO] root:53 - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+2025-11-05 16:23:46,798 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 16:23:46,802 [INFO] root:50 - Exited the save_object method of MainUtils class
+2025-11-05 16:23:46,803 [INFO] root:46 - Entered the save_object method of MainUtils class
+2025-11-05 16:23:46,808 [INFO] root:50 - Exited the save_object method of MainUtils class

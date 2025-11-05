@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/e8b3f806af8a4c4f936e024fbdbab41c/artifacts
+end_time: 1762359741684
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e8b3f806af8a4c4f936e024fbdbab41c
+run_name: abundant-boar-868
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762359499754
+status: 3
+tags: []
+user_id: MAC

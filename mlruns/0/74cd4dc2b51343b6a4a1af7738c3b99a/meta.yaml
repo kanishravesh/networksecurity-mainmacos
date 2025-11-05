@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/74cd4dc2b51343b6a4a1af7738c3b99a/artifacts
+end_time: 1762332880420
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 74cd4dc2b51343b6a4a1af7738c3b99a
+run_name: brawny-fawn-662
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762332880380
+status: 3
+tags: []
+user_id: MAC

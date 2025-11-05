@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/fd4cc80c3738493faf955b3bff5ab25e/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd4cc80c3738493faf955b3bff5ab25e
+run_name: sassy-steed-232
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762358010964
+status: 1
+tags: []
+user_id: MAC

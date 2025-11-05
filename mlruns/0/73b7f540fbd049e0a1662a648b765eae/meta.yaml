@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/73b7f540fbd049e0a1662a648b765eae/artifacts
+end_time: 1762353390552
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 73b7f540fbd049e0a1662a648b765eae
+run_name: Random Forest_Test
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762353390521
+status: 3
+tags: []
+user_id: MAC
