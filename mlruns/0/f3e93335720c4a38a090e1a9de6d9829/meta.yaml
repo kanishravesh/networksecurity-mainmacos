@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/f3e93335720c4a38a090e1a9de6d9829/artifacts
+end_time: 1762324076917
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f3e93335720c4a38a090e1a9de6d9829
+run_name: indecisive-robin-744
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762324065284
+status: 3
+tags: []
+user_id: MAC

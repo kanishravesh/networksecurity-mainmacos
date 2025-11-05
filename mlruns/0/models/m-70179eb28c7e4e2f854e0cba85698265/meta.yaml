@@ -1,0 +1,10 @@
+artifact_location: file:///Users/MAC/Downloads/networksecurity-main/mlruns/0/models/m-70179eb28c7e4e2f854e0cba85698265/artifacts
+creation_timestamp: 1762324065350
+experiment_id: '0'
+last_updated_timestamp: 1762324076908
+model_id: m-70179eb28c7e4e2f854e0cba85698265
+model_type: null
+name: model
+source_run_id: f3e93335720c4a38a090e1a9de6d9829
+status: 2
+status_message: null
