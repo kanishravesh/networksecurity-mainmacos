@@ -4,10 +4,10 @@ import numpy as np
 import os
 from sklearn.tree import plot_tree
 
-# Optional: set a clean default style
+
 sns.set(style="whitegrid", font_scale=1.1)
 
-# =================== 1️⃣ CORRELATION HEATMAP ===================
+
 def plot_correlation_matrix(df, save_path="Artifacts/correlation_heatmap.png"):
     """
     Generates and saves a correlation heatmap for numeric features.
@@ -27,7 +27,7 @@ def plot_correlation_matrix(df, save_path="Artifacts/correlation_heatmap.png"):
         print(f" Failed to generate correlation heatmap: {e}")
 
 
-# =================== 2️⃣ MODEL PERFORMANCE BAR CHART ===================
+
 def plot_model_comparison(model_scores: dict, save_path="Artifacts/model_comparison.png"):
     """
     Plots a bar chart comparing models by F1-score or Accuracy.
@@ -50,7 +50,7 @@ def plot_model_comparison(model_scores: dict, save_path="Artifacts/model_compari
         print(f" Failed to generate model comparison chart: {e}")
 
 
-# =================== 3️⃣ FEATURE IMPORTANCE BAR CHART ===================
+
 def plot_feature_importance(model, feature_names, save_path="Artifacts/feature_importance.png"):
     """
     Plots feature importances for tree-based models.
@@ -78,7 +78,7 @@ def plot_feature_importance(model, feature_names, save_path="Artifacts/feature_i
         print(f" Failed to generate feature importance plot: {e}")
 
 
-# =================== 4️⃣ DECISION TREE VISUALIZATION ===================
+
 def plot_decision_tree(model, feature_names, save_path="Artifacts/decision_tree.png"):
     """
     Saves a small visualization of the top part of a decision tree.

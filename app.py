@@ -21,7 +21,7 @@ from networksecurity.constants.training_pipeline import (
     DATA_INGESTION_DATABASE_NAME
 )
 
-# ---------------------- Setup ----------------------
+
 ca = certifi.where()
 load_dotenv()
 mongo_db_url = os.getenv("MONGODB_URL")
@@ -41,14 +41,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# ----------------------------------------------------
+
 
 @app.get("/", tags=["Root"])
 async def index():
     return RedirectResponse(url="/upload")
 
 
-# ---------------------- Train Model ----------------------
+
 @app.get("/train")
 async def train_route():
     try:
@@ -57,10 +57,10 @@ async def train_route():
         return RedirectResponse(url="/results", status_code=303)
     except Exception as e:
         raise NetworkSecurityException(e, sys)
-# ----------------------------------------------------------
 
 
-# ---------------------- Upload CSV ------------------------
+
+
 @app.get("/upload", response_class=HTMLResponse)
 async def upload_page(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
@@ -84,12 +84,12 @@ async def predict_route(file: UploadFile = File(...), request: Request = None):
     except Exception as e:
         return templates.TemplateResponse(
             "table.html",
-            {"request": request, "table": f"<p style='color:red;'>⚠️ Error: {e}</p>"}
+            {"request": request, "table": f"<p style='color:red;'> Error: {e}</p>"}
         )
-# ----------------------------------------------------------
 
 
-# ---------------------- Manual Feature Input -------------
+
+
 @app.get("/feature_form", response_class=HTMLResponse)
 async def get_feature_form(request: Request):
     features = [
@@ -109,7 +109,7 @@ import pandas as pd
 @app.post("/feature_form", response_class=HTMLResponse)
 async def predict_from_form(request: Request):
     try:
-        # ✅ Dynamically read all form inputs
+
         form_data = await request.form()
         data = {k: int(v) for k, v in form_data.items() if v.strip() != ""}
 
@@ -118,47 +118,47 @@ async def predict_from_form(request: Request):
                 "feature_form.html",
                 {
                     "request": request,
-                    "verdict": "⚠️ Please fill in at least one feature value.",
+                    "verdict": " Please fill in at least one feature value.",
                     "verdict_class": "error",
                 }
             )
 
         df = pd.DataFrame([data])
 
-        # ⚠️ Handle identical values (all 1 or all -1)
+
         if len(set(df.values.flatten())) == 1:
             return templates.TemplateResponse(
                 "feature_form.html",
                 {
                     "request": request,
                     "features": data.keys(),
-                    "verdict": "⚠️ All feature values identical — model cannot classify reliably.",
+                    "verdict": " All feature values identical — model cannot classify reliably.",
                     "verdict_class": "error",
                     "selected": data
                 }
             )
 
-        # ✅ Load model and preprocessor
+
         preprocessor = load_object("final_model/preprocessor.pkl")
         model = load_object("final_model/model.pkl")
         network_model = NetworkModel(preprocessor=preprocessor, model=model)
 
-        # ✅ Predict
+
         y_pred = network_model.predict(df)
         proba = float(model.predict_proba(df)[0][1]) if hasattr(model, "predict_proba") else 0.5
 
-        # ✅ Calibrated confidence
+
         true_conf = round(proba * 100, 2)
         display_conf = min(max(round(proba * 100 * 1.8, 2), 5.0), 95.0)
 
         if display_conf < 50:
-            verdict_text = f"✅ Likely Safe (display {display_conf}%, true {true_conf}%)"
+            verdict_text = f" Likely Safe (display {display_conf}%, true {true_conf}%)"
             verdict_class = "safe"
         elif display_conf < 75:
-            verdict_text = f"⚠️ Suspicious (display {display_conf}%, true {true_conf}%)"
+            verdict_text = f" Suspicious (display {display_conf}%, true {true_conf}%)"
             verdict_class = "medium"
         else:
-            verdict_text = f"🚨 Likely Phishing (display {display_conf}%, true {true_conf}%)"
+            verdict_text = f" Likely Phishing (display {display_conf}%, true {true_conf}%)"
             verdict_class = "malicious"
 
         return templates.TemplateResponse(
@@ -178,7 +178,7 @@ async def predict_from_form(request: Request):
             {
                 "request": request,
                 "features": [],
-                "verdict": f"❌ Error: {str(e)}",
+                "verdict": f"Error: {str(e)}",
                 "verdict_class": "error"
             }
         )
@@ -187,7 +187,7 @@ async def predict_from_form(request: Request):
 
 
 
-# ---------------------- Results Page ----------------------
+
 @app.get("/results", response_class=HTMLResponse)
 async def show_results(request: Request):
     try:

@@ -28,7 +28,7 @@ from networksecurity.utils.main_utils.visualization_utils import (
     plot_feature_importance,
     plot_decision_tree
 )
-# =============================================
+
 
 
 class ModelTrainer:
@@ -40,7 +40,7 @@ class ModelTrainer:
             raise NetworkSecurityException(e, sys)
         
 
-    # ================== MLflow Tracking ==================
+
     def track_mlflow(self, best_model, classification_metric, run_name="Default_Run"):
         """Logs metrics locally using MLflow (safely handles active runs)."""
         try:
@@ -55,7 +55,7 @@ class ModelTrainer:
             logging.warning(f"⚠️ MLflow tracking failed: {e}")
             if mlflow.active_run() is not None:
                 mlflow.end_run()
-    # =====================================================
+
 
 
     def train_model(self, X_train, y_train, X_test, y_test):
@@ -83,7 +83,7 @@ class ModelTrainer:
                 }
             }
 
-            # ===== Evaluate Models =====
+
             model_report = evaluate_models(
                 X_train=X_train, y_train=y_train,
                 X_test=X_test, y_test=y_test,
@@ -93,7 +93,7 @@ class ModelTrainer:
             os.makedirs("Artifacts", exist_ok=True)
             os.makedirs("static/plots", exist_ok=True)
 
-            # ===== Model Comparison Plot =====
+
             try:
                 if model_report and isinstance(model_report, dict):
                     sorted_models = dict(sorted(model_report.items(), key=lambda x: x[1], reverse=True))
@@ -107,7 +107,7 @@ class ModelTrainer:
                     plt.savefig("Artifacts/model_comparison.png", bbox_inches="tight", dpi=200)
                     plt.close()
 
-                    # Copy to static for UI
+
                     shutil.copy("Artifacts/model_comparison.png", "static/plots/model_comparison.png")
 
                     if mlflow.active_run() is None:
@@ -115,17 +115,17 @@ class ModelTrainer:
                     mlflow.log_artifact("Artifacts/model_comparison.png")
                     mlflow.end_run()
                 else:
-                    logging.warning("⚠️ Skipped model comparison plot — no valid report.")
+                    logging.warning(" Skipped model comparison plot — no valid report.")
             except Exception as e:
-                logging.warning(f"❌ Could not plot model comparison: {e}")
+                logging.warning(f" Could not plot model comparison: {e}")
 
-            # ===== Select Best Model =====
+
             best_model_score = max(sorted(model_report.values()))
             best_model_name = list(model_report.keys())[list(model_report.values()).index(best_model_score)]
             best_model = models[best_model_name]
-            logging.info(f"✅ Best Model Selected: {best_model_name} (F1 Score: {best_model_score})")
+            logging.info(f" Best Model Selected: {best_model_name} (F1 Score: {best_model_score})")
 
-            # ===== Train/Test Metrics =====
+
             y_train_pred = best_model.predict(X_train)
             classification_train_metric = get_classification_score(y_true=y_train, y_pred=y_train_pred)
             self.track_mlflow(best_model, classification_train_metric, run_name=f"{best_model_name}_train")
@@ -134,7 +134,7 @@ class ModelTrainer:
             classification_test_metric = get_classification_score(y_true=y_test, y_pred=y_test_pred)
             self.track_mlflow(best_model, classification_test_metric, run_name=f"{best_model_name}_test")
 
-            # ===== Feature Importance & Tree Visualization =====
+
             try:
                 feature_names = [f"Feature_{i}" for i in range(X_train.shape[1])]
 
@@ -161,9 +161,9 @@ class ModelTrainer:
                     mlflow.log_artifact("Artifacts/decision_tree.png")
 
             except Exception as e:
-                logging.warning(f"⚠️ Could not plot feature importance or decision tree: {e}")
+                logging.warning(f" Could not plot feature importance or decision tree: {e}")
 
-            # ===== Save Model =====
+
             preprocessor = load_object(file_path=self.data_transformation_artifact.transformed_object_file_path)
             os.makedirs(os.path.dirname(self.model_trainer_config.trained_model_file_path), exist_ok=True)
 
@@ -173,14 +173,14 @@ class ModelTrainer:
             os.makedirs("final_model", exist_ok=True)
             save_object("final_model/model.pkl", best_model)
 
-            # ===== Create Artifact =====
+
             model_trainer_artifact = ModelTrainerArtifact(
                 trained_model_file_path=self.model_trainer_config.trained_model_file_path,
                 train_metric_artifact=classification_train_metric,
                 test_metric_artifact=classification_test_metric
             )
 
-            logging.info(f"✅ Model trainer artifact created: {model_trainer_artifact}")
+            logging.info(f" Model trainer artifact created: {model_trainer_artifact}")
             return model_trainer_artifact
 
         except Exception as e:
@@ -203,7 +203,7 @@ class ModelTrainer:
                 test_arr[:, -1],
             )
 
-            # ===== Correlation Heatmap =====
+
             try:
                 raw_data = pd.read_csv("network_data/phisingData.csv")
                 os.makedirs("static/plots", exist_ok=True)
@@ -211,9 +211,9 @@ class ModelTrainer:
                 shutil.copy("Artifacts/correlation_heatmap.png", "static/plots/correlation_heatmap.png")
                 mlflow.log_artifact("Artifacts/correlation_heatmap.png")
             except Exception as e:
-                logging.warning(f"⚠️ Correlation heatmap skipped: {e}")
+                logging.warning(f" Correlation heatmap skipped: {e}")
 
-            # ===== Train and Save Model =====
+
             model_trainer_artifact = self.train_model(X_train, y_train, X_test, y_test)
             return model_trainer_artifact
 
